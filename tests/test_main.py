@@ -2,7 +2,6 @@ import shutil
 from pathlib import Path
 
 import pytest
-from sas7bdat_converter.converter import dir_to_csv
 
 from sas7bdat_converter_cli.main import __version__, app
 
