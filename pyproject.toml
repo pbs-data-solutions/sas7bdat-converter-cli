@@ -1,3 +1,4 @@
+[tool.poetry]
 name = "sas7bdat-converter-cli"
 version = "0.1.1"
 description = "CLI to convert sas7bdat and xport files into other formats"
