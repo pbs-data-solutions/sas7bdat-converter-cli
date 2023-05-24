@@ -1,10 +1,24 @@
-[tool.poetry]
 name = "sas7bdat-converter-cli"
-version = "0.1.0"
+version = "0.1.1"
 description = "CLI to convert sas7bdat and xport files into other formats"
 authors = ["Paul Sanders <paul@pbsdatasolutions.com>"]
 license = "MIT"
 readme = "README.md"
+repository = "https://github.com/pbs-data-solutions/sas7bdat-converter-cli"
+homepage = "https://github.com/pbs-data-solutions/sas7bdat-converter-cli"
+documentation = "https://github.com/pbs-data-solutions/sas7bdat-converter-cli"
+keywords = ["sas", "sas7bdat", "converter", "xpt", "XPort"]
+classifiers=[
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Typing :: Typed",
+]
+include = ["file_checksum/py.typed"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
