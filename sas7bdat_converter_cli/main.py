@@ -155,7 +155,7 @@ def to_xml(
     file_path: Path = Argument(..., help="Path to the file to convert", show_default=False),
     export_file: Path = Argument(..., help="Path to the new XML file", show_default=False),
 ) -> None:
-    """Convert a sas7bdat or xpt file to a XML file."""
+    """Convert a sas7bdat or xpt file to a xml file."""
     if file_path.suffix != ".sas7bdat" and file_path.suffix != ".xpt":
         exit("File must be either a sas7bdat file or a xpt file")
 
@@ -178,7 +178,7 @@ def dir_to_xml(
         show_default=False,
     ),
 ) -> None:
-    """Convert a directory of sas7bdat or xpt files to XML files."""
+    """Convert a directory of sas7bdat or xpt files to xml files."""
     export_path = output_dir or dir
     converter_dir_to_xml(dir_path=dir, export_path=export_path)
 
