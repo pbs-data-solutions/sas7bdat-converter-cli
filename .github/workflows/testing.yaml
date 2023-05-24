@@ -1,0 +1,93 @@
+name: Testing
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+    - name: Get full Python version
+      id: full-python-version
+      run: echo version=$(python -c "import sys; print('-'.join(str(v) for v in sys.version_info))") >> $GITHUB_OUTPUT
+    - name: Install Poetry and add to path
+      run: |
+        curl -sSL https://install.python-poetry.org/install-poetry.py | python -
+        echo "${HOME}/.local/bin" >> $GITHUB_PATH
+    - name: Configure poetry
+      run: |
+        poetry config virtualenvs.create true
+        poetry config virtualenvs.in-project true
+    - name: Cache poetry venv
+      uses: actions/cache@v3
+      id: poetry-cache
+      with:
+        path: .venv
+        key: venv-${{ runner.os }}-${{ steps.full-python-version.outputs.version }}-${{ hashFiles('**/poetry.lock') }}
+    - name: Ensure cache is healthy
+      if: steps.poetry-cache.outputs.cache-hit == 'true'
+      shell: bash
+      run: timeout 10s poetry run pip --version || rm -rf .venv
+    - name: Install Dependencies
+      run: poetry install
+    - name: Black check
+      run: |
+        poetry run black sas7bdat_converter_cli tests --check
+    - name: Lint with ruff
+      run: |
+        poetry run ruff .
+    - name: mypy check
+      run: |
+        poetry run mypy .
+  testing:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.8", "3.9", "3.10", "3.11"]
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Get full Python version
+      id: full-python-version
+      run: echo version=$(python -c "import sys; print('-'.join(str(v) for v in sys.version_info))") >> $GITHUB_OUTPUT
+    - name: Install Poetry and add to path on Windows
+      if: matrix.os == 'windows-latest'
+      run: |
+        (Invoke-WebRequest -Uri https://install.python-poetry.org/install-poetry.py -UseBasicParsing).Content | python -
+        echo "${HOME}\AppData\Roaming\Python\Scripts" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+    - name: Install Poetry and add to path on Mac and Linux
+      if: matrix.os != 'windows-latest'
+      run: |
+        curl -sSL https://install.python-poetry.org/install-poetry.py | python -
+        echo "${HOME}/.local/bin" >> $GITHUB_PATH
+    - name: Configure poetry
+      run: |
+        poetry config virtualenvs.create true
+        poetry config virtualenvs.in-project true
+    - name: Cache poetry venv
+      uses: actions/cache@v3
+      id: poetry-cache
+      with:
+        path: .venv
+        key: venv-${{ runner.os }}-${{ steps.full-python-version.outputs.version }}-${{ hashFiles('**/poetry.lock') }}
+    - name: Ensure cache is healthy
+      if: steps.poetry-cache.outputs.cache-hit == 'true'
+      shell: bash
+      run: timeout 10s poetry run pip --version || rm -rf .venv
+    - name: Install Dependencies
+      run: poetry install
+    - name: Test with pytest
+      run: |
+        poetry run pytest
