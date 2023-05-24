@@ -50,7 +50,7 @@ def to_excel(
     file_path: Path = Argument(..., help="Path to the file to convert", show_default=False),
     export_file: Path = Argument(..., help="Path to the new Excel file", show_default=False),
 ) -> None:
-    """Convert a sas7bdat or xpt file to an xlsx file."""
+    """Convert a sas7bdat or xpt file to a xlsx file."""
     if file_path.suffix != ".sas7bdat" and file_path.suffix != ".xpt":
         exit("File must be either a sas7bdat file or an xpt file")
 
@@ -74,6 +74,39 @@ def dir_to_excel(
     ),
 ) -> None:
     """Convert a directory of sas7bdat or xpt files to xlsx files."""
+    export_path = output_dir or dir
+    converter_dir_to_excel(dir_path=dir, export_path=export_path)
+
+
+@app.command()
+def to_json(
+    file_path: Path = Argument(..., help="Path to the file to convert", show_default=False),
+    export_file: Path = Argument(..., help="Path to the new JSON file", show_default=False),
+) -> None:
+    """Convert a sas7bdat or xpt file to a JSON file."""
+    if file_path.suffix != ".sas7bdat" and file_path.suffix != ".xpt":
+        exit("File must be either a sas7bdat file or an xpt file")
+
+    if export_file.suffix != ".json":
+        exit("The export file must be a json file")
+
+    converter_to_excel(sas7bdat_file=file_path, export_file=export_file)
+
+
+@app.command()
+def dir_to_json(
+    dir: Path = Argument(
+        ..., help="Path to the directory to convert", exists=True, show_default=False
+    ),
+    output_dir: Union[Path, None] = Option(
+        None,
+        "--output-dir",
+        "-o",
+        help="Path to the directory to save the output files. Default = The same directory as dir",
+        show_default=False,
+    ),
+) -> None:
+    """Convert a directory of sas7bdat or xpt files to json files."""
     export_path = output_dir or dir
     converter_dir_to_excel(dir_path=dir, export_path=export_path)
 
