@@ -18,7 +18,7 @@ classifiers=[
   "Operating System :: OS Independent",
   "Typing :: Typed",
 ]
-include = ["file_checksum/py.typed"]
+include = ["sas7bdat_converter_cli/py.typed"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
