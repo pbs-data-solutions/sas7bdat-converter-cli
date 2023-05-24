@@ -3,8 +3,10 @@ from typing import Union
 
 from sas7bdat_converter import dir_to_csv as converter_dir_to_csv
 from sas7bdat_converter import dir_to_excel as converter_dir_to_excel
+from sas7bdat_converter import dir_to_json as converter_dir_to_json
 from sas7bdat_converter import to_csv as converter_to_csv
 from sas7bdat_converter import to_excel as converter_to_excel
+from sas7bdat_converter import to_json as converter_to_json
 from typer import Argument, Exit, Option, Typer, echo
 
 __version__ = "0.1.0"
@@ -90,7 +92,7 @@ def to_json(
     if export_file.suffix != ".json":
         exit("The export file must be a json file")
 
-    converter_to_excel(sas7bdat_file=file_path, export_file=export_file)
+    converter_to_json(sas7bdat_file=file_path, export_file=export_file)
 
 
 @app.command()
@@ -108,7 +110,7 @@ def dir_to_json(
 ) -> None:
     """Convert a directory of sas7bdat or xpt files to json files."""
     export_path = output_dir or dir
-    converter_dir_to_excel(dir_path=dir, export_path=export_path)
+    converter_dir_to_json(dir_path=dir, export_path=export_path)
 
 
 @app.callback(invoke_without_command=True)

@@ -337,6 +337,6 @@ def test_dir_to_json_same_dir_path_xpt(xpt_dir, test_runner, tmp_path):
     args = ["dir-to-json", str(tmp_path)]
     test_runner.invoke(app, args, catch_exceptions=False)
     sas_counter = len([name for name in tmp_path.iterdir() if name.suffix == ".xpt"])
-    convert_counter = len([name for name in tmp_path.iterdir() if name.suffix == ".csv"])
+    convert_counter = len([name for name in tmp_path.iterdir() if name.suffix == ".json"])
 
     assert sas_counter == convert_counter
