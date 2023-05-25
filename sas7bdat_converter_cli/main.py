@@ -48,11 +48,25 @@ def dir_to_csv(
         help="Path to the directory to save the output files. Default = The same directory as dir",
         show_default=False,
     ),
+    continue_on_error: bool = Option(
+        False,
+        "--continue-on-error",
+        "-c",
+        help="If set conversion will continue after failures",
+    ),
+    verbose: bool = Option(
+        False, "--verbose", "-v", help="If set the amount of information printed is increased."
+    ),
 ) -> None:
     """Convert a directory containing sas7bdat or xpt files to csv files."""
     with console.status("Converting files..."):
         export_path = output_dir or dir
-        converter_dir_to_csv(dir_path=dir, export_path=export_path)
+        converter_dir_to_csv(
+            dir_path=dir,
+            export_path=export_path,
+            continue_on_error=continue_on_error,
+            verbose=verbose,
+        )
 
 
 @app.command()
@@ -83,11 +97,25 @@ def dir_to_excel(
         help="Path to the directory to save the output files. Default = The same directory as dir",
         show_default=False,
     ),
+    continue_on_error: bool = Option(
+        False,
+        "--continue-on-error",
+        "-c",
+        help="If set conversion will continue after failures",
+    ),
+    verbose: bool = Option(
+        False, "--verbose", "-v", help="If set the amount of information printed is increased."
+    ),
 ) -> None:
     """Convert a directory of sas7bdat or xpt files to xlsx files."""
     with console.status("Converting files..."):
         export_path = output_dir or dir
-        converter_dir_to_excel(dir_path=dir, export_path=export_path)
+        converter_dir_to_excel(
+            dir_path=dir,
+            export_path=export_path,
+            continue_on_error=continue_on_error,
+            verbose=verbose,
+        )
 
 
 @app.command()
@@ -118,11 +146,25 @@ def dir_to_json(
         help="Path to the directory to save the output files. Default = The same directory as dir",
         show_default=False,
     ),
+    continue_on_error: bool = Option(
+        False,
+        "--continue-on-error",
+        "-c",
+        help="If set conversion will continue after failures",
+    ),
+    verbose: bool = Option(
+        False, "--verbose", "-v", help="If set the amount of information printed is increased."
+    ),
 ) -> None:
     """Convert a directory of sas7bdat or xpt files to json files."""
     with console.status("Converting files..."):
         export_path = output_dir or dir
-        converter_dir_to_json(dir_path=dir, export_path=export_path)
+        converter_dir_to_json(
+            dir_path=dir,
+            export_path=export_path,
+            continue_on_error=continue_on_error,
+            verbose=verbose,
+        )
 
 
 @app.command()
@@ -153,11 +195,25 @@ def dir_to_parquet(
         help="Path to the directory to save the output files. Default = The same directory as dir",
         show_default=False,
     ),
+    continue_on_error: bool = Option(
+        False,
+        "--continue-on-error",
+        "-c",
+        help="If set conversion will continue after failures",
+    ),
+    verbose: bool = Option(
+        False, "--verbose", "-v", help="If set the amount of information printed is increased."
+    ),
 ) -> None:
     """Convert a directory of sas7bdat or xpt files to parquet files."""
     with console.status("Converting files..."):
         export_path = output_dir or dir
-        converter_dir_to_parquet(dir_path=dir, export_path=export_path)
+        converter_dir_to_parquet(
+            dir_path=dir,
+            export_path=export_path,
+            continue_on_error=continue_on_error,
+            verbose=verbose,
+        )
 
 
 @app.command()
@@ -188,11 +244,25 @@ def dir_to_xml(
         help="Path to the directory to save the output files. Default = The same directory as dir",
         show_default=False,
     ),
+    continue_on_error: bool = Option(
+        False,
+        "--continue-on-error",
+        "-c",
+        help="If set conversion will continue after failures",
+    ),
+    verbose: bool = Option(
+        False, "--verbose", "-v", help="If set the amount of information printed is increased."
+    ),
 ) -> None:
     """Convert a directory of sas7bdat or xpt files to xml files."""
     with console.status("Converting files..."):
         export_path = output_dir or dir
-        converter_dir_to_xml(dir_path=dir, export_path=export_path)
+        converter_dir_to_xml(
+            dir_path=dir,
+            export_path=export_path,
+            continue_on_error=continue_on_error,
+            verbose=verbose,
+        )
 
 
 @app.callback(invoke_without_command=True)
