@@ -14,7 +14,7 @@ from sas7bdat_converter import to_parquet as converter_to_parquet
 from sas7bdat_converter import to_xml as converter_to_xml
 from typer import Argument, Exit, Option, Typer, echo
 
-__version__ = "0.1.1"
+__version__ = "0.2.0"
 
 app = Typer()
 console = Console()
