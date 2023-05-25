@@ -135,6 +135,23 @@ def test_dir_to_csv_same_dir_path_xpt(xpt_dir, test_runner, tmp_path):
     assert sas_counter == convert_counter
 
 
+@pytest.mark.parametrize("continue_on_error", ["--continue-on-error", "-c"])
+def test_dir_to_csv_continue(continue_on_error, test_runner, tmp_path, sas7bdat_dir, bad_sas_file):
+    sas_files = [str(x) for x in sas7bdat_dir.iterdir()]
+    for sas_file in sas_files:
+        shutil.copy(sas_file, str(tmp_path))
+
+    shutil.copy(bad_sas_file, str(tmp_path))
+
+    args = ["dir-to-csv", str(tmp_path), continue_on_error]
+    test_runner.invoke(app, args, catch_exceptions=False)
+
+    sas_counter = len([name for name in tmp_path.iterdir() if name.suffix == ".sas7bdat"]) - 1
+    convert_counter = len([name for name in tmp_path.iterdir() if name.suffix == ".csv"])
+
+    assert sas_counter == convert_counter
+
+
 @pytest.mark.parametrize(
     "fixture_name, expected_name",
     [("sas_file_1", "file1.xlsx"), ("sas_file_2", "file2.xlsx"), ("sas_file_3", "file3.xlsx")],
@@ -232,6 +249,25 @@ def test_dir_to_excel_same_dir_path_xpt(xpt_dir, test_runner, tmp_path):
     args = ["dir-to-excel", str(tmp_path)]
     test_runner.invoke(app, args, catch_exceptions=False)
     sas_counter = len([name for name in tmp_path.iterdir() if name.suffix == ".xpt"])
+    convert_counter = len([name for name in tmp_path.iterdir() if name.suffix == ".xlsx"])
+
+    assert sas_counter == convert_counter
+
+
+@pytest.mark.parametrize("continue_on_error", ["--continue-on-error", "-c"])
+def test_dir_to_excel_continue(
+    continue_on_error, test_runner, tmp_path, sas7bdat_dir, bad_sas_file
+):
+    sas_files = [str(x) for x in sas7bdat_dir.iterdir()]
+    for sas_file in sas_files:
+        shutil.copy(sas_file, str(tmp_path))
+
+    shutil.copy(bad_sas_file, str(tmp_path))
+
+    args = ["dir-to-excel", str(tmp_path), continue_on_error]
+    test_runner.invoke(app, args, catch_exceptions=False)
+
+    sas_counter = len([name for name in tmp_path.iterdir() if name.suffix == ".sas7bdat"]) - 1
     convert_counter = len([name for name in tmp_path.iterdir() if name.suffix == ".xlsx"])
 
     assert sas_counter == convert_counter
@@ -343,6 +379,23 @@ def test_dir_to_json_same_dir_path_xpt(xpt_dir, test_runner, tmp_path):
     assert sas_counter == convert_counter
 
 
+@pytest.mark.parametrize("continue_on_error", ["--continue-on-error", "-c"])
+def test_dir_to_json_continue(continue_on_error, test_runner, tmp_path, sas7bdat_dir, bad_sas_file):
+    sas_files = [str(x) for x in sas7bdat_dir.iterdir()]
+    for sas_file in sas_files:
+        shutil.copy(sas_file, str(tmp_path))
+
+    shutil.copy(bad_sas_file, str(tmp_path))
+
+    args = ["dir-to-json", str(tmp_path), continue_on_error]
+    test_runner.invoke(app, args, catch_exceptions=False)
+
+    sas_counter = len([name for name in tmp_path.iterdir() if name.suffix == ".sas7bdat"]) - 1
+    convert_counter = len([name for name in tmp_path.iterdir() if name.suffix == ".json"])
+
+    assert sas_counter == convert_counter
+
+
 @pytest.mark.parametrize(
     "fixture_name, expected_name",
     [
@@ -449,6 +502,25 @@ def test_dir_to_parquet_same_dir_path_xpt(xpt_dir, test_runner, tmp_path):
     assert sas_counter == convert_counter
 
 
+@pytest.mark.parametrize("continue_on_error", ["--continue-on-error", "-c"])
+def test_dir_to_parquet_continue(
+    continue_on_error, test_runner, tmp_path, sas7bdat_dir, bad_sas_file
+):
+    sas_files = [str(x) for x in sas7bdat_dir.iterdir()]
+    for sas_file in sas_files:
+        shutil.copy(sas_file, str(tmp_path))
+
+    shutil.copy(bad_sas_file, str(tmp_path))
+
+    args = ["dir-to-parquet", str(tmp_path), continue_on_error]
+    test_runner.invoke(app, args, catch_exceptions=False)
+
+    sas_counter = len([name for name in tmp_path.iterdir() if name.suffix == ".sas7bdat"]) - 1
+    convert_counter = len([name for name in tmp_path.iterdir() if name.suffix == ".parquet"])
+
+    assert sas_counter == convert_counter
+
+
 @pytest.mark.parametrize(
     "fixture_name, expected_name",
     [("sas_file_1", "file1.xml"), ("sas_file_2", "file2.xml"), ("sas_file_3", "file3.xml")],
@@ -550,6 +622,23 @@ def test_dir_to_xml_same_dir_path_xpt(xpt_dir, test_runner, tmp_path):
     args = ["dir-to-xml", str(tmp_path)]
     test_runner.invoke(app, args, catch_exceptions=False)
     sas_counter = len([name for name in tmp_path.iterdir() if name.suffix == ".xpt"])
+    convert_counter = len([name for name in tmp_path.iterdir() if name.suffix == ".xml"])
+
+    assert sas_counter == convert_counter
+
+
+@pytest.mark.parametrize("continue_on_error", ["--continue-on-error", "-c"])
+def test_dir_to_xml_continue(continue_on_error, test_runner, tmp_path, sas7bdat_dir, bad_sas_file):
+    sas_files = [str(x) for x in sas7bdat_dir.iterdir()]
+    for sas_file in sas_files:
+        shutil.copy(sas_file, str(tmp_path))
+
+    shutil.copy(bad_sas_file, str(tmp_path))
+
+    args = ["dir-to-xml", str(tmp_path), continue_on_error]
+    test_runner.invoke(app, args, catch_exceptions=False)
+
+    sas_counter = len([name for name in tmp_path.iterdir() if name.suffix == ".sas7bdat"]) - 1
     convert_counter = len([name for name in tmp_path.iterdir() if name.suffix == ".xml"])
 
     assert sas_counter == convert_counter
