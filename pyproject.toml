@@ -24,7 +24,7 @@ include = ["sas7bdat_converter_cli/py.typed"]
 [tool.poetry.dependencies]
 python = "^3.8"
 typer = "0.9.0"
-sas7bdat-converter = {version = "1.3.0", extras = ["all"]}
+sas7bdat-converter = {version = "2.0.0", extras = ["all"]}
 
 [tool.poetry.group.dev.dependencies]
 black = "23.3.0"
