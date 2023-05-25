@@ -679,13 +679,13 @@ files = [
 
 [[package]]
 name = "sas7bdat-converter"
-version = "1.3.0"
+version = "2.0.0"
 description = "Convert sas7bdat and xport files into other formats"
 optional = false
 python-versions = ">=3.8.0,<4.0.0"
 files = [
-    {file = "sas7bdat_converter-1.3.0-py3-none-any.whl", hash = "sha256:f4e644608e357fe9cd677b96169e370abf02a47ba82f8a017ab26241df5d1447"},
-    {file = "sas7bdat_converter-1.3.0.tar.gz", hash = "sha256:4a81794935e429918b9d7209490530bdbbbd5d6d2ce27cc237037c009b2d6ed4"},
+    {file = "sas7bdat_converter-2.0.0-py3-none-any.whl", hash = "sha256:aeee6a73400e834656c4481279bd808353a8ff4dceb649f55b249c36d3ba2f78"},
+    {file = "sas7bdat_converter-2.0.0.tar.gz", hash = "sha256:dcd2b729eea2368530f50b79582ca12574cffea05cac7810debbb76361bec423"},
 ]
 
 [package.dependencies]
@@ -813,4 +813,4 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.3)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "7afea9673b67dde118669a5b61a72d54ea38c5f7391f4048a932f7c031747dd0"
+content-hash = "8deb3bb84971d9be0a4668f186f36e451e3913578ad15c94d64e71f5cc39a7e7"
