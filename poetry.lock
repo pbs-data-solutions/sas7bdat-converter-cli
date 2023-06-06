@@ -484,17 +484,18 @@ xml = ["lxml (>=4.6.3)"]
 
 [[package]]
 name = "pandas-stubs"
-version = "2.0.1.230501"
+version = "2.0.2.230605"
 description = "Type annotations for pandas"
 category = "dev"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "pandas_stubs-2.0.1.230501-py3-none-any.whl", hash = "sha256:7ffc6528290df44881d1d78b7239161ba203e4b6570b71949fc4a4e5eabca8a5"},
-    {file = "pandas_stubs-2.0.1.230501.tar.gz", hash = "sha256:2faf2c08ecfd8f5b82823279e06818d92eb642079e73d93921779bad69bd4cb0"},
+    {file = "pandas_stubs-2.0.2.230605-py3-none-any.whl", hash = "sha256:39106b602f3cb6dc5f728b84e1b32bde6ecf41ee34ee714c66228009609fbada"},
+    {file = "pandas_stubs-2.0.2.230605.tar.gz", hash = "sha256:624c7bb06d38145a44b61be459ccd19b038e0bf20364a025ecaab78fea65e858"},
 ]
 
 [package.dependencies]
+numpy = ">=1.24.3"
 types-pytz = ">=2022.1.1"
 
 [[package]]
@@ -924,4 +925,4 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.3)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "147731b4a2083d04a13f9446d690c114822e17006870901932a9cd66c4640db2"
+content-hash = "d091bc20a461f6a67aedf5c71c922efcabb4ff747116bf999ad77d78f606a58b"
