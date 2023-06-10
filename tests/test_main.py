@@ -1,5 +1,6 @@
 import json
 import shutil
+import sys
 from pathlib import Path
 
 import pandas as pd
@@ -8,10 +9,10 @@ import pytest
 
 from sas7bdat_converter_cli.main import __version__, app
 
-try:
-    import tomli as tomllib  # type: ignore
-except ModuleNotFoundError:
-    import tomllib  # type: ignore
+if sys.version_info < (3, 11):
+    import tomli as tomllib
+else:
+    import tomllib
 
 
 def test_versions_match():
