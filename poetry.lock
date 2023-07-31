@@ -700,13 +700,13 @@ files = [
 
 [[package]]
 name = "rich"
-version = "13.4.2"
+version = "13.5.1"
 description = "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
 optional = false
 python-versions = ">=3.7.0"
 files = [
-    {file = "rich-13.4.2-py3-none-any.whl", hash = "sha256:8f87bc7ee54675732fa66a05ebfe489e27264caeeff3728c945d25971b6485ec"},
-    {file = "rich-13.4.2.tar.gz", hash = "sha256:d653d6bccede5844304c605d5aac802c7cf9621efd700b46c7ec2b51ea914898"},
+    {file = "rich-13.5.1-py3-none-any.whl", hash = "sha256:b97381b204a206e1be618f5e1215a57174a1a7732490b3bf6668cf41d30bc72d"},
+    {file = "rich-13.5.1.tar.gz", hash = "sha256:881653ee7037803559d8eae98f145e0a4c4b0ec3ff0300d2cc8d479c71fc6819"},
 ]
 
 [package.dependencies]
@@ -879,4 +879,4 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.3)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "41a8e7d9082995e2ba77d7336d9649731c9a0e41a2281640d842e47e788dd88f"
+content-hash = "c3238382037227b3aac1fb36af91ce0d358ed49a7ef2a92c079ed91b2b609003"
