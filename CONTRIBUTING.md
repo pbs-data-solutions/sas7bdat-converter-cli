@@ -13,7 +13,8 @@ for something that interests you.
 Please include:
 
 1. A short, self-contained Python snippet reproducing the problem. You can format the code by using
-[GitHub markdown](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github). For example:
+[GitHub markdown](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github). For
+example:
 
 ```sh
 sas7bdat-converter to_csv my_file.sas7bdat my_file.csv
@@ -42,7 +43,7 @@ This creates the directory sas7bdat-converter-cli and connects your repository t
 ### Working with the code
 
 Note: This project uses Poetry to manage dependencies. If you do not already have Poetry installed
-you will need to install it with the instuctions [here](https://python-poetry.org/docs/#installation)
+you will need to install it with the instructions [here](https://python-poetry.org/docs/#installation)
 
 First the requirements need to be installed.
 
@@ -75,7 +76,7 @@ git pull upstream main --ff-only
 
 sas7bdat-converter-cli uses [ruff](https://github.com/charliermarsh/ruff),
 [Black](https://github.com/psf/black), and [mypy](https://mypy.readthedocs.io/en/stable/) to ensure
-consistant code formmating.
+consistent code formatting.
 
 You can run linting on your code at any time with:
 
@@ -116,7 +117,7 @@ def my_function(argument: str) -> None:
     ...
 
 
-def another_funciton(num: int) -> int:
+def another_function(num: int) -> int:
     return num + 1
 ```
 
@@ -176,13 +177,13 @@ fix any errors. Once the errors are fixed you can run the same git commit comman
 ## Push your changes
 
 Once your changes are ready and all linting/tests are passing you can push your changes to your
-forked repositry:
+forked repository:
 
 ```sh
 git push origin my-new-feature
 ```
 
-origin is the default name of your remote repositry on GitHub. You can see all of your remote
+origin is the default name of your remote repository on GitHub. You can see all of your remote
 repositories by running:
 
 ```sh
