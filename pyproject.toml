@@ -28,7 +28,7 @@ sas7bdat-converter = {version = "2.0.0", extras = ["all"]}
 rich = "13.5.2"
 
 [tool.poetry.group.dev.dependencies]
-black = "23.7.0"
+black = "23.9.1"
 mypy = "1.5.1"
 pre-commit = "3.4.0"
 pytest = "7.4.2"
