@@ -25,7 +25,7 @@ include = ["sas7bdat_converter_cli/py.typed"]
 python = "^3.8"
 typer = "0.12.5"
 sas7bdat-converter = {version = "2.0.1", extras = ["all"]}
-rich = "13.7.1"
+rich = "13.8.0"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "1.11.2"
