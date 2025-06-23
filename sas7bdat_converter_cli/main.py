@@ -12,7 +12,7 @@ from sas7bdat_converter import to_json as converter_to_json
 from sas7bdat_converter import to_xml as converter_to_xml
 from typer import Argument, Exit, Option, Typer, echo
 
-__version__ = "1.0.0"
+__version__ = "2.0.0"
 
 app = Typer()
 console = Console()
