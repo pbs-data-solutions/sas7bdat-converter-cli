@@ -11,10 +11,10 @@ documentation = "https://github.com/pbs-data-solutions/sas7bdat-converter-cli"
 keywords = ["sas", "sas7bdat", "converter", "xpt", "XPort"]
 classifiers=[
   "Intended Audience :: Science/Research",
-  "Programming Language :: Python :: 3.8",
-  "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
   "License :: OSI Approved :: MIT License",
   "Operating System :: OS Independent",
   "Typing :: Typed",
@@ -22,19 +22,19 @@ classifiers=[
 include = ["sas7bdat_converter_cli/py.typed"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
-typer = "0.15.3"
-sas7bdat-converter = {version = "2.0.1", extras = ["all"]}
+python = "^3.10"
+typer = "0.16.0"
+sas7bdat-converter = {version = "3.0.0", extras = ["all"]}
 rich = "14.0.0"
 
 [tool.poetry.group.dev.dependencies]
-mypy = "1.14.1"
-pre-commit = "3.5.0"
-pytest = "8.3.5"
-pytest-cov = "5.0.0"
-ruff = "0.11.7"
+mypy = "1.16.1"
+pre-commit = "4.2.0"
+pytest = "8.4.1"
+pytest-cov = "6.2.1"
+ruff = "0.12.0"
 tomli = {version = "2.2.1", python = "<3.11"}
-pandas-stubs = "2.0.3.230814"
+pandas-stubs = "2.2.3.250527"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -52,7 +52,6 @@ module = ["tests.*"]
 disallow_untyped_defs = false
 
 [[tool.mypy.overrides]]
-module = ["pyarrow.*"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]
