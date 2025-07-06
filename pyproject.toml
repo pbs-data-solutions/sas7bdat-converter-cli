@@ -34,7 +34,7 @@ pytest = "8.4.1"
 pytest-cov = "6.2.1"
 ruff = "0.12.2"
 tomli = {version = "2.2.1", python = "<3.11"}
-pandas-stubs = "2.2.3.250527"
+pandas-stubs = "2.3.0.250703"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
