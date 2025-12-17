@@ -28,7 +28,7 @@ sas7bdat-converter = {version = "3.0.0", extras = ["all"]}
 rich = "14.2.0"
 
 [tool.poetry.group.dev.dependencies]
-mypy = "1.19.0"
+mypy = "1.19.1"
 pre-commit = "4.5.1"
 pytest = "9.0.2"
 pytest-cov = "7.0.0"
