@@ -33,7 +33,7 @@ pre-commit = "4.5.1"
 pytest = "9.0.2"
 pytest-cov = "7.0.0"
 ruff = "0.14.11"
-tomli = {version = "2.3.0", python = "<3.11"}
+tomli = {version = "2.4.0", python = "<3.11"}
 pandas-stubs = "2.3.3.251219"
 
 [build-system]
