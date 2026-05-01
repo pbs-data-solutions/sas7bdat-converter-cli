@@ -1105,14 +1105,14 @@ files = [
 
 [[package]]
 name = "typer"
-version = "0.25.0"
+version = "0.25.1"
 description = "Typer, build great CLIs. Easy to code. Based on Python type hints."
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "typer-0.25.0-py3-none-any.whl", hash = "sha256:ac01b48823d3db9a83c9e164338057eadbb1c9957a2a6b4eeb486669c560b5dc"},
-    {file = "typer-0.25.0.tar.gz", hash = "sha256:123eaf9f19bb40fd268310e12a542c0c6b4fab9c98d9d23342a01ff95e3ce930"},
+    {file = "typer-0.25.1-py3-none-any.whl", hash = "sha256:75caa44ed46a03fb2dab8808753ffacdbfea88495e74c85a28c5eefcf5f39c89"},
+    {file = "typer-0.25.1.tar.gz", hash = "sha256:9616eb8853a09ffeabab1698952f33c6f29ffdbceb4eaeecf571880e8d7664cc"},
 ]
 
 [package.dependencies]
@@ -1181,4 +1181,4 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "55757feab1a8e460761ccb886b9d9bf3596e96044b7837cbc70da7f6c2e56fe6"
+content-hash = "0a505c19c664b121c4e5ea0a5a44f00d6237dbfab5d0acc4a3362e43409f616f"
