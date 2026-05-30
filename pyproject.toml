@@ -32,7 +32,7 @@ mypy = "2.1.0"
 pre-commit = "4.6.0"
 pytest = "9.0.3"
 pytest-cov = "7.1.0"
-ruff = "0.15.14"
+ruff = "0.15.15"
 tomli = {version = "2.4.1", python = "<3.11"}
 pandas-stubs = "2.3.3.260113"
 
